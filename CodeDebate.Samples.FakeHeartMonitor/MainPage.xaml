@@ -5,9 +5,41 @@
     xmlns:local="using:CodeDebate.Samples.FakeHeartMonitor"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    RequestedTheme="Light" 
+    MinWidth="900"
+    Width="900"
+    MinHeight="600" 
+    Height="600">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="30, 20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Padding="0, 0, 0, 30" Style="{ThemeResource HeaderTextBlockStyle}">Fake Heart Monitor Sample</TextBlock>
+        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical">
+            <Image Source="Assets/999-01-P1.png" Stretch="None" Width="210"></Image>
+            <TextBlock Style="{ThemeResource SubheaderTextBlockStyle}" HorizontalAlignment="Center">Patient A</TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical">
+            <Image Source="Assets/999-01-P2.png" Stretch="None" Width="210"></Image>
+            <TextBlock Style="{ThemeResource SubheaderTextBlockStyle}" HorizontalAlignment="Center">Patient B</TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Vertical">
+            <Image Source="Assets/999-01-P3.png" Stretch="None" Width="210"></Image>
+            <TextBlock Style="{ThemeResource SubheaderTextBlockStyle}" HorizontalAlignment="Center">Patient C</TextBlock>
+        </StackPanel>
+        <TextBlock Grid.Row="2" Grid.Column="0" x:Name="PatientAHeartRateLabel" FontSize="50" FontFamily="Terminal" HorizontalAlignment="Center">00</TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="1" x:Name="PatientBHeartRateLabel" FontSize="50" FontFamily="Terminal" HorizontalAlignment="Center">00</TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="2" x:Name="PatientCHeartRateLabel" FontSize="50" FontFamily="Terminal" HorizontalAlignment="Center">00</TextBlock>
+        <Button Grid.Row="3" Grid.Column="2" Margin="0, 30, 0, 0" Padding="15" FontSize="30" x:Name="StartStopButton" Content="Start / Stop" Click="StartStopButton_OnClick"></Button>
     </Grid>
 </Page>
